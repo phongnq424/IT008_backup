@@ -1,0 +1,132 @@
+﻿<Window x:Class="MoPhongThiNghiemVatLy.AddWindow.ThemSLDienTro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:m="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoPhongThiNghiemVatLy.AddWindow"
+        mc:Ignorable="d"
+        Title="ThemSLDienTro"
+        Height="300"
+        Width="500"
+        ResizeMode="NoResize"
+        FocusManager.FocusedElement="{Binding ElementName=QuantityTextBox}">
+
+    <!-- Nền gradient từ xanh dương sang tím -->
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+            <GradientStop Color="#2196F3"
+                          Offset="0" />
+            <GradientStop Color="#9C27B0"
+                          Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <!-- Đường nối -->
+        <Path Stroke="White"
+              StrokeThickness="23"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top"
+              Margin="44,34,0,0"
+              Stretch="Fill"
+              Width="478">
+            <Path.Data>
+                <LineGeometry StartPoint="70,40"
+                              EndPoint="500,40" />
+            </Path.Data>
+        </Path>
+
+        <!-- Button hình tròn -->
+        <Button Content=""
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontSize="25"
+                FontWeight="Bold"
+                Background="BlueViolet"
+                Foreground="White"
+                BorderBrush="White"
+                BorderThickness="3"
+                Margin="19,20,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="25">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Đường cộng -->
+        <Path Fill="White"
+              Stroke="White"
+              StrokeThickness="2"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top"
+              Margin="35,36,0,0"
+              Width="18"
+              Height="18"
+              Stretch="Fill"
+              RenderTransformOrigin="0.448,0.599">
+            <Path.Data>
+                <GeometryGroup>
+                    <LineGeometry StartPoint="10,40"
+                                  EndPoint="70,40" />
+                    <LineGeometry StartPoint="40,10"
+                                  EndPoint="40,70" />
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+
+        <!-- Tiêu đề -->
+        <TextBlock Text="Nhập số lượng điện trở"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Margin="0,100,0,0"
+                   Foreground="White"
+                   />
+
+        <!-- TextBox với hiệu ứng thông báo khi nhập sai -->
+        <TextBox x:Name="QuantityTextBox"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Width="200"
+                 Height="40"
+                 Margin="0,140,0,0"
+                 FontSize="16"
+                 BorderBrush="#1976D2"
+                 BorderThickness="2"
+                 Background="White"
+                 Foreground="#2196F3"
+                 KeyDown="OnTextBoxKeyDown"
+                 TextChanged="OnTextBoxTextChanged" />
+
+        <!-- Button Save -->
+        <Button Content="Save"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Width="100"
+                Height="40"
+                Margin="0,200,0,0"
+                Background="#1976D2"
+                Foreground="White"
+                FontSize="16"
+                Click="OnSaveButtonClick" />
+
+        <!-- Snackbar -->
+        <materialDesign:Snackbar x:Name="ErrorSnackbar"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Bottom"
+                                 MessageQueue="{Binding SnackbarMessageQueue}" />
+    </Grid>
+</Window>
