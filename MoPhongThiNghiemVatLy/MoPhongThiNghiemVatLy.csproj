@@ -69,6 +69,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddWindow\NhapGTBongDen.xaml.cs">
+      <DependentUpon>NhapGTBongDen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindow\NhapGTDienTro.xaml.cs">
+      <DependentUpon>NhapGTDienTro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindow\NhapThongTinDeXoa.xaml.cs">
+      <DependentUpon>NhapThongTinDeXoa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindow\NhapUToanMach.xaml.cs">
+      <DependentUpon>NhapUToanMach.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddWindow\ThemSLDienTro.xaml.cs">
       <DependentUpon>ThemSLDienTro.xaml</DependentUpon>
     </Compile>
@@ -84,6 +96,22 @@
     <Compile Include="StorageInformation.cs" />
     <Compile Include="ToolbarButton.cs" />
     <Compile Include="Core\Volmeter.cs" />
+    <Page Include="AddWindow\NhapGTBongDen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWindow\NhapGTDienTro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWindow\NhapThongTinDeXoa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWindow\NhapUToanMach.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddWindow\ThemSLDienTro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,7 +210,9 @@
   <ItemGroup>
     <Resource Include="Images\CheckIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Delete.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.7.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

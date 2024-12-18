@@ -25,6 +25,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.ExceptionServices;
 using MoPhongThiNghiemVatLy.AddWindow;
+using Newtonsoft.Json.Linq;
 
 namespace MoPhongThiNghiemVatLy
 {
@@ -39,44 +40,24 @@ namespace MoPhongThiNghiemVatLy
             }
             else
             {
-                var inputBox = new TextBox
-                {
-                    Width = 60,
-                    Height = 25,
-                    Margin = new Thickness(10),
-                    Text = "24" // Giá trị mặc định là 24
-                };
-                var dialog = new Window
-                {
-                    Title = "Nhập hiệu điện thế toàn mạch: ",
-                    Content = inputBox,
-                    Width = 200,
-                    Height = 120,
-                    WindowStartupLocation = WindowStartupLocation.CenterScreen
-                };
-                dialog.Content = inputBox;
-                dialog.Loaded += (sender, e) => inputBox.Focus(); //focus tự động
 
-                inputBox.KeyDown += (s, keyEventArgs) =>
+                // Tạo và hiển thị cửa sổ nhập giá trị điện trở
+                var inputWindow = new AddWindow.NhapUToanMach
                 {
-                    if (keyEventArgs.Key == Key.Enter)
-                    {
-                        if (double.TryParse(inputBox.Text, out double value) && value > 0)
-                        {
-                            Circuit.MainCurcuitVoltage = value;
-                            Drawing.AddSourceToCanvas(CircuitCanvas, 0, 0);
-                            MainWindow.Instance.isSourceAdded = true;
-                            MainCircuit.indexOfNode += 1;
-                            MainCircuit.mainCircuit.Add(new Node(MainCircuit.indexOfNode));
-                            dialog.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Vui lòng nhập số lớn hơn 0!");
-                        }
-                    }
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                    Topmost = true,
+                    ResizeMode = ResizeMode.NoResize,
+                    ShowInTaskbar = false
                 };
-                dialog.ShowDialog();
+                // Kiểm tra kết quả nhập liệu
+                if (inputWindow.ShowDialog() == true)
+                {
+                    Circuit.MainCurcuitVoltage = inputWindow.Value;
+                    Drawing.AddSourceToCanvas(CircuitCanvas, 0, 0);
+                    MainWindow.Instance.isSourceAdded = true;
+                    MainCircuit.indexOfNode += 1;
+                    MainCircuit.mainCircuit.Add(new Node(MainCircuit.indexOfNode));
+                }
             }
         }
         public static void MNTBtn_Click(Canvas CircuitCanvas)
@@ -95,17 +76,22 @@ namespace MoPhongThiNghiemVatLy
             {
                 MessageBox.Show("Điện thì cứ chạy mà hay muốn thêm quá! Giật điện đó ạ, tắt kiểm tra đèn đi");
                 return;
-            }    
+            }
+
             BackUpComponent(); // backup trước khi làm gì nhé
+
+            double resistorValue = Drawing.ShowInputBoxForResistor(MainWindow.Instance.resistorCount + 1);
+            if (resistorValue <= 0) return;
 
             MainWindow.Instance.seriesResistorCount++; // Tăng đt nối tiếp
             MainWindow.Instance.resistorCount++;
             MainWindow.Instance.index++;
             MainWindow.Instance._seriesResistorCount[MainWindow.Instance.index] = 1;
-            MainWindow.Instance.resistorValues[MainWindow.Instance.resistorCount] = 0; 
-            
+            MainWindow.Instance.resistorValues[MainWindow.Instance.resistorCount] = resistorValue;
+
             Drawing.UpdateCircuitAfterAdd(CircuitCanvas, 1);
-            MainCircuit.AddSeries(MainCircuit.mainCircuit, Drawing.ShowInputBoxForResistor(MainWindow.Instance.resistorCount));        
+            MainCircuit.AddSeries(MainCircuit.mainCircuit, resistorValue);
+
             if (MainWindow.Instance.resistorCount == 1 && MainWindow.Instance.seriesResistorCount == 1)
             {
                 MainWindow.Instance.checkDotForVolt = true;
@@ -115,6 +101,7 @@ namespace MoPhongThiNghiemVatLy
                 MainWindow.Instance.checkDotForVolt = false;
             }
         }
+
         public static void MSSBtn_Click(Canvas CircuitCanvas)
         {
             if (!MainWindow.Instance.isSourceAdded)
@@ -134,7 +121,13 @@ namespace MoPhongThiNghiemVatLy
             }
             BackUpComponent(); // backup trước khi làm gì nhé
 
-            var dialog = new ThemSLDienTro();
+            var dialog = new ThemSLDienTro()
+            {
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Topmost = true, 
+                ResizeMode = ResizeMode.NoResize,
+                ShowInTaskbar = false 
+            };
             bool? result = dialog.ShowDialog();
 
             if (result == true) 
@@ -167,11 +160,13 @@ namespace MoPhongThiNghiemVatLy
                 MessageBox.Show("Điện thì cứ chạy mà hay muốn thêm quá! Giật điện đó ạ, tắt kiểm tra đèn đi");
                 return;
             }
-            BackUpComponent(); // backup trước khi làm gì nhé
+            BackUpComponent();
+            double[] Value = Drawing.ShowInputBoxForLight();
+            if (Value == null) return;
             MainWindow.Instance.index++;
             MainWindow.Instance._seriesResistorCount[MainWindow.Instance.index] = -1;
             Drawing.UpdateCircuitAfterAdd(CircuitCanvas, 0);
-            MainCircuit.AddLight(MainCircuit.mainCircuit, Drawing.ShowInputBoxForLight());
+            MainCircuit.AddLight(MainCircuit.mainCircuit, Value);
         }
         public static void Ampe_Click(Canvas CircuitCanvas)
         {

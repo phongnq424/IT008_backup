@@ -43,6 +43,7 @@ namespace MoPhongThiNghiemVatLy
             indexOfRes += 1;
             list.Add(new Resistor(value, indexOfRes));
         }
+
         public static void AddVolmeter(List<CircuitDiagram> list, int l, int r)
         {
             BackUpBeforeEachBahavior();

@@ -39,41 +39,6 @@ namespace MoPhongThiNghiemVatLy
         private string currentFilePath = string.Empty;
         private string currentPicturesPath = string.Empty;
 
-        public void Export_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*",
-                Title = "Save Image File"
-            };
-
-            if (saveFileDialog.ShowDialog() == true)
-            {
-                string filePath = saveFileDialog.FileName;
-                SaveCanvasAsImage(MainWindow.Instance.CircuitCanvas, filePath);
-                currentPicturesPath = filePath; 
-            }
-        }
-
-        public void SaveCanvasAsImage(Canvas canvas, string filePath)
-        {
-            RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(
-                (int)canvas.ActualWidth,
-                (int)canvas.ActualHeight,
-                96, 
-                96,
-                PixelFormats.Pbgra32);
-            renderTargetBitmap.Render(canvas);
-            PngBitmapEncoder pngEncoder = new PngBitmapEncoder();
-            pngEncoder.Frames.Add(BitmapFrame.Create(renderTargetBitmap));
-            using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                pngEncoder.Save(fileStream);
-            }
-
-            MessageBox.Show("Canvas saved as image!");
-        }
-
         public void New_Click(object sender, RoutedEventArgs e)
         {
             if (MainWindow.Instance.isSave == false)
@@ -104,16 +69,31 @@ namespace MoPhongThiNghiemVatLy
         public void CreateNew()
         {
             MainWindow newWindow = new MainWindow();
-            // Đóng cửa sổ hiện tại
             Application.Current.MainWindow.Close();
-
             // Đặt cửa sổ mới làm cửa sổ chính
             Application.Current.MainWindow = newWindow;
-
+            RefreshData();
             newWindow.Show();
 
         }
-        
+        private void RefreshData()
+        {
+            MainCircuit.indexOfNode = 0;
+            MainCircuit.indexOfRes = 0;
+            MainCircuit.indexOfVol = 0;
+            MainCircuit.indexOfAmpe = 0;
+            MainCircuit.indexOfSwitch = 0;
+            MainCircuit.indexOfLight = 0;
+
+            MainCircuit.mainCircuit = new List<CircuitDiagram>();
+            MainCircuit.history = new Stack<List<CircuitDiagram>>();  // Lịch sử các hành động (cho undo)
+            MainCircuit.redoStack = new Stack<List<CircuitDiagram>>();  // Lịch sử các hành động đã undo (cho redo)
+
+            Circuit.MainCurcuitVoltage = 0;
+            Circuit.MainCircuitEROC = 0;
+            Circuit.MainCircuitAmperage = 0;
+        }
+
         public void OpenFileButton_Click(object sender, RoutedEventArgs e)
         {
             if (MainWindow.Instance.isSourceAdded == true)
@@ -515,13 +495,47 @@ namespace MoPhongThiNghiemVatLy
                 currentFilePath = filePath; // Lưu đường dẫn của file đã lưu
             }
         }
+        public void Export_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*",
+                Title = "Save Image File"
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string filePath = saveFileDialog.FileName;
+                SaveCanvasAsImage(MainWindow.Instance.CircuitCanvas, filePath);
+                currentPicturesPath = filePath;
+            }
+        }
+
+        public void SaveCanvasAsImage(Canvas canvas, string filePath)
+        {
+            RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap(
+                (int)canvas.ActualWidth,
+                (int)canvas.ActualHeight,
+                96,
+                96,
+                PixelFormats.Pbgra32);
+            renderTargetBitmap.Render(canvas);
+            PngBitmapEncoder pngEncoder = new PngBitmapEncoder();
+            pngEncoder.Frames.Add(BitmapFrame.Create(renderTargetBitmap));
+            using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                pngEncoder.Save(fileStream);
+            }
+
+            MessageBox.Show("Canvas saved as image!");
+        }
         public void Undo_Click(object sender, RoutedEventArgs e)
         {
-
+            ToolbarButton.UndoClick();
         }
         public void Redo_Click(object sender, RoutedEventArgs e)
         {
-
+            ToolbarButton.RedoClick();
         }
         public void Help_Click(object sender, RoutedEventArgs e)
         {

@@ -151,235 +151,61 @@ namespace MoPhongThiNghiemVatLy
         public static double ShowInputBoxForResistor(int resistorIndex)
         {
             double returnValue = 0;
-            var inputBox = new TextBox
-            {
-                Width = 60,
-                Height = 25,
-                Margin = new Thickness(10),
-                Text = "" 
-            };
 
-            var dialog = new Window
+            // Tạo và hiển thị cửa sổ nhập giá trị điện trở
+            var inputWindow = new AddWindow.NhapGTDienTro
             {
-                Title = $"Nhập giá trị cho R{resistorIndex}",
-                Content = inputBox,
-                Width = 200,
-                Height = 120,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Topmost = true,
+                ResizeMode = ResizeMode.NoResize,
+                ShowInTaskbar = false
             };
-
-            dialog.Content = inputBox;
-            dialog.Loaded += (sender, e) => inputBox.Focus(); //focus tự động
-            inputBox.KeyDown += (s, e) =>
+            // Kiểm tra kết quả nhập liệu
+            if (inputWindow.ShowDialog() == true)
             {
-                if (e.Key == Key.Enter)
-                {
-                    if (double.TryParse(inputBox.Text, out double value))
-                    {
-                        returnValue = value;
-                        MainWindow.Instance.resistorValues[resistorIndex] = value; // Lưu giá trị điện trở
-                        UpdateResistorValuesDisplay(); // Hiển thị lại các giá trị điện trở
-                        dialog.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng nhập giá trị hợp lệ!");
-                    }
-                }
-            };
-            dialog.ShowDialog();
+                returnValue = inputWindow.ResistorValue; 
+                MainWindow.Instance.resistorValues[resistorIndex] = returnValue; 
+                UpdateResistorValuesDisplay(); 
+            }
             return returnValue;
         }
 
         public static double[] ShowInputBoxForLight()
         {
-            double[] returnValue = new double[2];
+            double[] returnValue = null;
 
-            // Tạo TextBox để nhập trị số
-            var inputBox = new TextBox
+            var inputWindow = new AddWindow.NhapGTBongDen
             {
-                Width = 60,
-                Height = 25,
-                Margin = new Thickness(10),
-                Text = "" // Giá trị mặc định
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Topmost = true,
+                ResizeMode = ResizeMode.NoResize,
+                ShowInTaskbar = false
             };
-
-            // Hiển thị TextBox dưới dạng cửa sổ pop-up
-            var dialog = new Window
+            // Kiểm tra kết quả nhập liệu
+            if (inputWindow.ShowDialog() == true)
             {
-                Title = $"Nhập Công suất cho bóng đèn",
-                Content = inputBox,
-                Width = 200,
-                Height = 120,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-
-            dialog.Content = inputBox;
-
-            // Đặt focus tự động
-            dialog.Loaded += (sender, e) => inputBox.Focus();
-
-            // Xử lý sự kiện khi nhấn Enter hoặc đóng cửa sổ
-            inputBox.KeyDown += (s, e) =>
-            {
-                if (e.Key == Key.Enter)
-                {
-                    if (double.TryParse(inputBox.Text, out double value))
-                    {
-                        returnValue[0] = value;
-                        //MainWindow.Instance.resistorValues[resistorIndex] = value; // Lưu giá trị điện trở
-                        //UpdateResistorValuesDisplay(); // Hiển thị lại các giá trị điện trở
-                        dialog.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng nhập giá trị hợp lệ!");
-                    }
-                }
-            };
-            dialog.ShowDialog();
-
-            return ShowNextInputBoxForLight(returnValue);
-        }
-        private static double[] ShowNextInputBoxForLight(double[] returnValue)
-        {
-            var inputBox = new TextBox
-            {
-                Width = 60,
-                Height = 25,
-                Margin = new Thickness(10),
-                Text = "" // Giá trị mặc định
-            };
-
-            // Hiển thị TextBox dưới dạng cửa sổ pop-up
-            var dialog = new Window
-            {
-                Title = $"Nhập Điện trở cho bóng đèn",
-                Content = inputBox,
-                Width = 200,
-                Height = 120,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-
-            dialog.Content = inputBox;
-
-            // Đặt focus tự động
-            dialog.Loaded += (sender, e) => inputBox.Focus();
-
-            // Xử lý sự kiện khi nhấn Enter hoặc đóng cửa sổ
-            inputBox.KeyDown += (s, e) =>
-            {
-                if (e.Key == Key.Enter)
-                {
-                    if (double.TryParse(inputBox.Text, out double value))
-                    {
-                        returnValue[1] = value;
-                        //MainWindow.Instance.resistorValues[resistorIndex] = value; // Lưu giá trị điện trở
-                        //UpdateResistorValuesDisplay(); // Hiển thị lại các giá trị điện trở
-                        dialog.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng nhập giá trị hợp lệ!");
-                    }
-                }
-            };
-            dialog.ShowDialog();
-            MainWindow.Instance.LightData.Add(returnValue[0], returnValue[1]);
-            UpdateResistorValuesDisplay();
+                returnValue = new double[2];
+                returnValue[0] = inputWindow.P;
+                returnValue[1] = inputWindow.R;
+                MainWindow.Instance.LightData.Add(returnValue[0], returnValue[1]);
+                UpdateResistorValuesDisplay();
+            }
             return returnValue;
         }
-
         public static int[] ShowInputForXoa()
         {
-            var stackPanel = new StackPanel
-            {
-                Orientation = Orientation.Vertical,
-                Margin = new Thickness(10)
-            };
-
-            // Thêm Label hướng dẫn chọn thành phần
-            stackPanel.Children.Add(new Label
-            {
-                FontSize = 17,
-                Foreground = Brushes.Red,
-                Content = "Chọn thành phần cần xóa:",
-                HorizontalAlignment = HorizontalAlignment.Center
-            });
-
-            // ComboBox để chọn loại thành phần
-            var comboBox = new ComboBox
-            {
-                Width = 200,
-                Margin = new Thickness(10),
-                ItemsSource = new string[] { "Điện trở", "Đèn", "Ampe", "Khóa", "Vôn kế" },
-                SelectedIndex = 0 // Mặc định chọn "Điện trở"
-            };
-            stackPanel.Children.Add(comboBox);
-
-            // Thêm Label hướng dẫn nhập chỉ số
-            stackPanel.Children.Add(new Label
-            {
-                FontSize = 16,
-                Foreground = Brushes.Red,
-                Content = "Nhập số nguyên là STT (ví dụ R1 nhập 1):",
-                HorizontalAlignment = HorizontalAlignment.Center
-            });
-
-            // TextBox để nhập chỉ số thành phần
-            var inputBox = new TextBox
-            {
-                Width = 60,
-                Height = 25,
-                Margin = new Thickness(10),
-                Text = "0",
-            };
-            stackPanel.Children.Add(inputBox);
-
-            // Tạo cửa sổ
-            var dialog = new Window
-            {
-                Title = "Nhập thông tin cần xóa",
-                Content = stackPanel,
-                SizeToContent = SizeToContent.WidthAndHeight,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-
-            // Kết quả trả về
             int[] result = null;
-
-            // Xử lý khi nhấn phím Enter
-            inputBox.KeyDown += (s, keyEventArgs) =>
+            var inputWindow = new AddWindow.NhapThongTinDeXoa
             {
-                if (keyEventArgs.Key == Key.Enter)
-                {
-                    int index;
-                    if (int.TryParse(inputBox.Text, out index) && index > 0)
-                    {
-                        int componentType = 0;
-
-                        // Ánh xạ loại thành phần
-                        switch (comboBox.SelectedIndex)
-                        {
-                            case 0: componentType = DEFINE.TYPE_Res; break;
-                            case 1: componentType = DEFINE.TYPE_Light; break;
-                            case 2: componentType = DEFINE.TYPE_Ampe; break;
-                            case 3: componentType = DEFINE.TYPE_Switch; break;
-                            case 4: componentType = DEFINE.TYPE_Vol; break;
-                        }
-
-                        result = new int[] { componentType, index }; // Lưu kết quả
-                        dialog.Close(); // Đóng cửa sổ
-                    }
-                    else
-                    {
-                        // Thông báo lỗi
-                        MessageBox.Show("Vui lòng nhập một số nguyên dương hợp lệ!");
-                        inputBox.BorderBrush = Brushes.Red;
-                    }
-                }
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Topmost = true,
+                ResizeMode = ResizeMode.NoResize,
+                ShowInTaskbar = false
             };
-            dialog.ShowDialog();
+            if (inputWindow.ShowDialog() == true)
+            {
+                result = inputWindow.Result;
+            }
             return result;
         }
 

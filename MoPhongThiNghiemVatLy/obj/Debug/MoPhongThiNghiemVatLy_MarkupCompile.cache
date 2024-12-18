@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\phong\OneDrive\Documents\GitHub\DoAnIT008\MoPhongThiNghiemVatLy\obj\Debug\
+D:\DoAnIT008\MoPhongThiNghiemVatLy\obj\Debug\
 MoPhongThiNghiemVatLy
 none
 false
 DEBUG;TRACE
-C:\Users\phong\OneDrive\Documents\GitHub\DoAnIT008\MoPhongThiNghiemVatLy\App.xaml
-21407637608
+D:\DoAnIT008\MoPhongThiNghiemVatLy\App.xaml
+61353155266
 
-21-2031445415
-17-1505299613
-AddWindow\ThemSLDienTro.xaml;MainWindow.xaml;
+2570141879
+17-79256409
+AddWindow\NhapGTBongDen.xaml;AddWindow\NhapGTDienTro.xaml;AddWindow\NhapThongTinDeXoa.xaml;AddWindow\NhapUToanMach.xaml;AddWindow\ThemSLDienTro.xaml;MainWindow.xaml;
 
 False
 

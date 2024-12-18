@@ -39,19 +39,19 @@
         <!--Thanh menu-->
         <Menu DockPanel.Dock="Top" Height="25">
 
-            <MenuItem Header="New" Click="New_Click" Height="30" Width="40"/>
-            <MenuItem Header="Open" Click="OpenFileButton_Click" Height="30" Width="40"/>
-            <MenuItem Header="Save" Click="SaveFile_Click" Height="30" Width="40"/>
-            <MenuItem Header="Save As" Click="SaveAsFile_Click" Height="30" Width="50"/>
+            <MenuItem Header="New" Click="New_Click" Height="30" Width="80"/>
+            <MenuItem Header="Open" Click="OpenFileButton_Click" Height="30" Width="90"/>
+            <MenuItem Header="Save" Click="SaveFile_Click" Height="30" Width="80"/>
+            <MenuItem Header="Save As" Click="SaveAsFile_Click" Height="30" Width="120" />
                 <MenuItem Header="Export"
                           Click="Export_Click"
                           Height="30"
-                          Width="50" />
-                <MenuItem Header="Edit" Height="30" Width="40">
-                <MenuItem Header="Undo" Click="Undo_Click"/>
-                <MenuItem Header="Redo" Click="Redo_Click"/>
+                          Width="100" />
+                <MenuItem Header="Edit" Height="30" Width="80">
+                    <MenuItem Header="Undo" Click="Undo_Click" Foreground="Black"/>
+                    <MenuItem Header="Redo" Click="Redo_Click" Foreground="Black"/>
             </MenuItem>
-            <MenuItem Header="Help" Click="Help_Click" Height="30" Width="40"/>
+            <MenuItem Header="Help" Click="Help_Click" Height="30" Width="82"/>
         </Menu>
         <!--Thanh toolbar  chứa các chi tiết mạch điện-->
             <Border DockPanel.Dock="Top" Margin="9" Background="#333333" CornerRadius="15">
@@ -562,7 +562,7 @@
                                         <!-- Border bao quanh và thay đổi màu nền -->
                                         <Border x:Name="ButtonBackground" Background="#333333" BorderBrush="#333333" Margin="0,0,23,0" CornerRadius="0,15,15,0">
                                             <StackPanel HorizontalAlignment="Center">
-                                                <Image Source="Images/Ampe.png" Width="110" Height="60" Margin="-3,11,-1,0" Stretch="Uniform" />
+                                                <Image Source="Images/Delete.png" Width="110" Height="60" Margin="-3,11,-1,0" Stretch="Uniform" />
                                                 <TextBlock Text="Xóa" FontSize="16" HorizontalAlignment="Center" Margin="0,-3,0,0" Foreground="White"/>
                                             </StackPanel>
                                         </Border>
