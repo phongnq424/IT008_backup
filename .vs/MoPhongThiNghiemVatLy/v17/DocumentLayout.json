@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\DoAnIT008\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\menustrip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\addwindow\\nhapgtbongden.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhapgtbongden.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|d:\\doanit008\\mophongthinghiemvatly\\menustrip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\menustrip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\drawing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|d:\\doanit008\\mophongthinghiemvatly\\core\\maincircuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\core\\maincircuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\core\\maincircuit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,15 +31,11 @@
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\addwindow\\nhapgtbongden.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhapgtbongden.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\addwindow\\nhaputoanmach.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhaputoanmach.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|d:\\doanit008\\mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhapgtdientro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|d:\\doanit008\\mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|D:\\DoAnIT008\\mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D05DBA53-E68C-4C0C-9575-CCCDBBAA86B4}|MoPhongThiNghiemVatLy\\MoPhongThiNghiemVatLy.csproj|solutionrelative:mophongthinghiemvatly\\addwindow\\nhapthongtindexoa.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -90,12 +90,11 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapThongTinDeXoa.xaml.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAA1wCEAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T10:34:08.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T10:34:08.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainCircuit.cs",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\Core\\MainCircuit.cs",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\Core\\MainCircuit.cs",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\Core\\MainCircuit.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAqwCwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T10:30:54.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T10:30:54.439Z"
             },
             {
               "$type": "Document",
@@ -115,18 +113,17 @@
               "ToolTip": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\AddWindow\\NhapThongTinDeXoa.xaml",
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapThongTinDeXoa.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T09:45:33.98Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T09:45:33.98Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MenuStrip.cs",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\MenuStrip.cs",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\MenuStrip.cs",
               "ToolTip": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\MenuStrip.cs",
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\MenuStrip.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAAAFoAAAAAAAAA",
+              "ViewState": "AQIAAHEAAAAAAAAAAAAAwFoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T07:39:51.699Z",
               "EditorCaption": ""
@@ -141,12 +138,11 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapGTBongDen.xaml.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAqwF0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T08:47:44.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T08:47:44.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "NhapGTBongDen.xaml",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\AddWindow\\NhapGTBongDen.xaml",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\AddWindow\\NhapGTBongDen.xaml",
@@ -166,12 +162,11 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapUToanMach.xaml.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAowCAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T07:41:41.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T07:41:41.61Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\MainWindow.xaml.cs",
@@ -179,8 +174,7 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\MainWindow.xaml.cs",
               "ViewState": "AQIAALYAAAAAAAAAAAAUwK8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T07:37:56.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T07:37:56.219Z"
             },
             {
               "$type": "Document",
@@ -204,8 +198,7 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapGTDienTro.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T04:12:51.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T04:12:51.09Z"
             },
             {
               "$type": "Document",
@@ -216,8 +209,7 @@
               "ToolTip": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\AddWindow\\NhapGTDienTro.xaml",
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\NhapGTDienTro.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T04:11:05.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T04:11:05.924Z"
             },
             {
               "$type": "Document",
@@ -229,24 +221,22 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\ToolbarButton.cs",
               "ViewState": "AQIAAF8BAAAAAAAAAAAuwGgBAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T18:59:54.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:59:54.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\MainWindow.xaml",
               "ToolTip": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\MainWindow.xaml",
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T18:52:04.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:52:04.604Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Drawing.cs",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\Drawing.cs",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\Drawing.cs",
@@ -254,8 +244,7 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\Drawing.cs",
               "ViewState": "AQIAALkAAAAAAAAAAAAswMsAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T18:52:03.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:52:03.42Z"
             },
             {
               "$type": "Document",
@@ -267,12 +256,11 @@
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\ThemSLDienTro.xaml.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAcwBsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T18:44:33.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T18:44:33.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\App.xaml",
               "RelativeDocumentMoniker": "MoPhongThiNghiemVatLy\\App.xaml",
@@ -291,8 +279,7 @@
               "ToolTip": "D:\\DoAnIT008\\MoPhongThiNghiemVatLy\\AddWindow\\ThemSLDienTro.xaml",
               "RelativeToolTip": "MoPhongThiNghiemVatLy\\AddWindow\\ThemSLDienTro.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T17:52:02.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T17:52:02.836Z"
             }
           ]
         }
